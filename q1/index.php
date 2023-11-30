@@ -1,3 +1,4 @@
+<?php include_once "db.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,13 +34,26 @@
           <td>刪除</td>
           <td></td>
         </tr>
+
+        <?php
+        $rows = $Title->all();
+        foreach ($rows as $row) {
+          # code...
+
+        ?>
+
         <tr>
-          <td><img src="" alt="" style="width:300px; height:30px;"></td>
-          <td><input type="text" name="" id="" style="width:90%"></td>
+          <td><img src="./img/<?= $row['img'] ?>" alt="" style="width:300px; height:30px;"></td>
+          <td><input type="text" name="" id="" value="<?= $row['text'] ?>" style="width:90%"></td>
           <td><input type="radio" name="" id=""></td>
           <td><input type="checkbox" name="" id=""></td>
           <td><input class="btn btn-info" type="button" value="更新圖片"></td>
         </tr>
+
+        <?php
+        }
+
+        ?>
       </table>
       <!-- 這裡因為要快，所以用 div -->
       <div class="d-flex justify-content-between">
