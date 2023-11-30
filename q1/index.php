@@ -43,7 +43,7 @@
       </table>
       <!-- 這裡因為要快，所以用 div -->
       <div class="d-flex justify-content-between">
-        <div><input type="button" onclick="op('#cover','#cvr','view.php?do=title')" value="新增網站標題圖片"></div>
+        <div><input type="button" onclick="op('#cover','#cvr','title.php')" value="新增網站標題圖片"></div>
         <div>
           <input type="submit" value="修改確定">
           <input type="reset" value="重置">
