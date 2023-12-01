@@ -1,7 +1,7 @@
 <?php
 include_once "db.php";
 
-dd($_POST);
+// dd($_POST);
 $data = [];
 $data['text'] = $_POST['subject'];
 $data['subject_id'] = 0;
