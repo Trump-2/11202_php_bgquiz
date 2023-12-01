@@ -24,10 +24,10 @@
           </div>
         </div>
         <div class="bg-light">
-          <div class=p-2>
+          <div class="p-2" id="option">
             <label for="">選項</label>
             <input type="text" name="option[]" id="">
-            <input type="button" value="更多">
+            <input type="button" value="更多" onclick="more()">
           </div>
         </div>
         <div>
@@ -39,7 +39,18 @@
   </main>
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
-
+  <script>
+  function more() {
+    let option =
+      `<div class="p-2">
+            <label for="">選項</label>
+            <input type="text" name="option[]" id="">
+         </div>`;
+    // jquery 的語法
+    $("#option").before(option);
+  }
+  </script>
 </body>
 
 </html>
+<

@@ -8,19 +8,6 @@
   <link rel="stylesheet" href="../css/bootstrap.css">
 
   <style>
-  fieldset {
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-
-  legend {
-    float: left;
-    width: 100%;
-    padding: 0;
-    margin-bottom: .5rem;
-  }
   </style>
 </head>
 
