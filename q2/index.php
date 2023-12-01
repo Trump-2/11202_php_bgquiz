@@ -29,17 +29,16 @@
         </tr>
 
         <?php
-        $ques = $Que->all(['subject_id' => 0]);
+        $ques = $Que->all(['subject_id' => 0, 'sh' => 1]);
         foreach ($ques as $idx => $que) {
-
         ?>
           <tr>
             <td><?= $idx + 1 ?></td>
             <td><?= $que['text'] ?></td>
             <td><?= $que['count'] ?></td>
-            <td><a class="btn btn-secondary btn-sm" href="result.php?id=<?= $que['id'] ?>">投票結果</a></td>
+            <td><a class="btn btn-secondary" href="result.php?id=<?= $que['id'] ?>">投票結果</a></td>
             <td>
-              <a class="btn btn-warning btn-sm" href="vote.php?id=<?= $que['id'] ?>">我要投票</a>
+              <a class="btn btn-warning" href="vote.php?id=<?= $que['id'] ?>">我要投票</a>
             </td>
 
           </tr>

@@ -17,7 +17,7 @@
   <main class="container p-3">
     <fieldset>
       <legend>新增問卷</legend>
-      <form action="add_question.php" method="post">
+      <form action="./api/add_question.php" method="post">
         <div class="d-flex">
           <div class="col-3 bg-light p-2">問卷名稱</div>
           <div class="col-6 p-2">
@@ -52,17 +52,18 @@
 
           foreach ($ques as $idx => $que) {
           ?>
-          <tr>
-            <td><?= $idx + 1 ?> </td> <!-- +1 讓編號從 1 開始 -->
-            <td><?= $que['text'] ?></td>
-            <td>
-              <button class="btn btn-primary">顯示</button><button class="btn btn-secondary">編輯</button>
-              <!-- 在 button 外包一層 a tag 把 id 傳給 del.php  -->
-              <a href="./api/del.php?id=<?= $que['id'] ?>">
-                <button class="btn btn-warning">刪除</button>
-              </a>
-            </td>
-          </tr>
+            <tr>
+              <td><?= $idx + 1 ?> </td> <!-- +1 讓編號從 1 開始 -->
+              <td><?= $que['text'] ?></td>
+              <td>
+                <a href="./api/show.php?id=<?= $que['id'] ?>" class="btn btn-primary"><?= ($que['sh'] == 1) ? '顯示' : '隱藏' ?></a>
+                <button class="btn btn-secondary">編輯</button>
+                <!-- 在 button 外包一層 a tag 把 id 傳給 del.php  -->
+                <a href="./api/del.php?id=<?= $que['id'] ?>">
+                  <button class="btn btn-warning">刪除</button>
+                </a>
+              </td>
+            </tr>
           <?php
           }
           ?>
@@ -75,15 +76,15 @@
 
   <!-- 自己寫的 js -->
   <script>
-  function more() {
-    let option =
-      `<div class="p-2">
+    function more() {
+      let option =
+        `<div class="p-2">
             <label for="">選項</label>
             <input type="text" name="option[]" id="">
          </div>`;
-    // jquery 的語法
-    $("#option").before(option);
-  }
+      // jquery 的語法
+      $("#option").before(option);
+    }
   </script>
 </body>
 
