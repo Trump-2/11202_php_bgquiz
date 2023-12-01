@@ -42,15 +42,15 @@
 
   <!-- 自己寫的 js -->
   <script>
-  function more() {
-    let option =
-      `<div class="p-2">
+    function more() {
+      let option =
+        `<div class="p-2">
             <label for="">選項</label>
             <input type="text" name="option[]" id="">
          </div>`;
-    // jquery 的語法
-    $("#option").before(option);
-  }
+      // jquery 的語法
+      $("#option").before(option);
+    }
   </script>
 </body>
 
