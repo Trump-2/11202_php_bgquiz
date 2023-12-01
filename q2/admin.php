@@ -39,6 +39,8 @@
   </main>
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
+
+  <!-- 自己寫的 js -->
   <script>
   function more() {
     let option =
