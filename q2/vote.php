@@ -26,12 +26,15 @@
     <ul class="list-group col-6 mx-auto">
       <?php
       $opts = $Que->all(['subject_id' => $_GET['id']]);
+      echo "<pre>";
+      print_r($opts);
+      echo "</pre>";
       foreach ($opts as $idx => $opt) {
       ?>
-        <li class="list-group-item list-group-item-action">
-          <input type="radio" name="opt" value="<?= $opt['id'] ?>" id="">
-          <?= $opt['text'] ?>
-        </li>
+      <li class="list-group-item list-group-item-action">
+        <input type="radio" name="opt" value="<?= $opt['id'] ?>" id="">
+        <?= $opt['text'] ?>
+      </li>
       <?php
       }
       ?>
