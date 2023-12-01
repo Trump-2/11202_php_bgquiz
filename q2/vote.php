@@ -22,7 +22,7 @@
     ?>
   </main>
   <h2 class="text-center"><?= $subject['text'] ?></h2>
-  <form action="add_vote.php" method="post">
+  <form action="../api/vote.php" method="post">
     <ul class="list-group col-6 mx-auto">
       <?php
       $opts = $Que->all(['subject_id' => $_GET['id']]);
@@ -31,10 +31,10 @@
       echo "</pre>";
       foreach ($opts as $idx => $opt) {
       ?>
-      <li class="list-group-item list-group-item-action">
-        <input type="radio" name="opt" value="<?= $opt['id'] ?>" id="">
-        <?= $opt['text'] ?>
-      </li>
+        <li class="list-group-item list-group-item-action">
+          <input type="radio" name="opt" value="<?= $opt['id'] ?>" id="">
+          <?= $opt['text'] ?>
+        </li>
       <?php
       }
       ?>

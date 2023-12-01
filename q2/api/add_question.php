@@ -1,5 +1,5 @@
 <?php
-include_once "db.php";
+include_once "../db.php";
 
 // dd($_POST);
 $data = [];
@@ -21,4 +21,4 @@ foreach ($_POST['option'] as $option) {
   $Que->save($data);
 }
 
-header("location:admin.php");
+header("location:../admin.php");
