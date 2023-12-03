@@ -40,6 +40,7 @@
 
     <fieldset>
       <legend>問卷列表</legend>
+      <!-- 這裡在 table 外包一層 div 是因為原本要對 table 添加 col-xxx class，但 table 不吃所以才有這層 -->
       <div class="col-9 mx-auto">
         <table class="table">
           <tr>
