@@ -32,16 +32,18 @@
       $div = ($subject['count'] > 0) ? $subject['count'] : 1;
       $rate = round($opt['count']  / $div, 3);
     ?>
-    <li class="list-group-item list-group-item-action d-flex">
-      <div class="col-6">
-        <?= $idx + 1 ?>
-        <?= $opt['text'] ?>
-      </div>
-      <div class="col-6 d-flex">
-        <div class="col-8 bg-success"></div>
-        <div class="col-4">&nbsp;&nbsp;<?= $opt['count'] ?>票(<?= $rate * 100 ?>%)</div>
-      </div>
-    </li>
+      <li class="list-group-item list-group-item-action d-flex">
+        <div class="col-6">
+          <?= $idx + 1 ?>
+          <?= $opt['text'] ?>
+        </div>
+        <div class="col-6 d-flex">
+
+          <!-- 這裡 style 的 width 後面那串看不懂 ( 還沒補上 ) -->
+          <div class="col-8 bg-success"></div>
+          <div class="col-4">&nbsp;&nbsp;<?= $opt['count'] ?>票(<?= $rate * 100 ?>%)</div>
+        </div>
+      </li>
     <?php
     }
     ?>
