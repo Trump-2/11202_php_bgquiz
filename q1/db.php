@@ -6,7 +6,10 @@ session_start();
 class DB
 {
   // class 內的成員不能為運算式
-  protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz";
+  // protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz";
+
+  // 遠端 server 用
+  protected $dsn = "mysql:host=localhost;charset=utf8;dbname=s1120404";
   protected $pdo;
   protected $table;
 
@@ -14,7 +17,10 @@ class DB
   public function __construct($table)
   {
     $this->table = $table;
-    $this->pdo = new PDO($this->dsn, 'root', '');
+    // $this->pdo = new PDO($this->dsn, 'root', '');
+
+    // 遠端 server 用
+    $this->pdo = new PDO($this->dsn, 's1120404', 's1120404');
   }
 
 

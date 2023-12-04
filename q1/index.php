@@ -22,7 +22,6 @@
   <header class="container">
     <?php
     $img = $Title->find(['sh' => 1]);
-    dd($img);
     ?>
     <img src="./img/<?= $img['img'] ?>" alt="">
   </header>
