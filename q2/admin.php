@@ -57,11 +57,11 @@
               <td><?= $idx + 1 ?> </td> <!-- +1 讓編號從 1 開始 -->
               <td><?= $que['text'] ?></td>
               <td>
-                <a href="./api/show.php?id=<?= $que['id'] ?>" class="btn btn-primary"><?= ($que['sh'] == 1) ? '顯示' : '隱藏' ?></a>
-                <button class="btn btn-secondary">編輯</button>
+                <a href="./api/show.php?id=<?= $que['id'] ?>" class="btn <?= $que['sh'] == 1 ? 'btn-primary' : 'btn-secondary' ?>"><?= $que['sh'] == 1 ? '顯示' : '隱藏' ?></a>
+                <button class=" btn btn-warning">編輯</button>
                 <!-- 在 button 外包一層 a tag 把 id 傳給 del.php  -->
                 <a href="./api/del.php?id=<?= $que['id'] ?>">
-                  <button class="btn btn-warning">刪除</button>
+                  <button class="btn btn-danger">刪除</button>
                 </a>
               </td>
             </tr>

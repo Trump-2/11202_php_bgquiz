@@ -29,7 +29,8 @@
         </tr>
 
         <?php
-        $ques = $Que->all(['subject_id' => 0]);
+        // 因為要顯示主題到 index.php 頁面，所以要再另外加上 sh = 1 的條件去撈資料
+        $ques = $Que->all(['subject_id' => 0, 'sh' => 1]);
         foreach ($ques as $idx => $que) {
         ?>
           <tr>
