@@ -34,13 +34,12 @@
     ?>
       <li class="list-group-item list-group-item-action d-flex">
         <div class="col-6">
-          <?= $idx + 1 ?>
-          <?= $opt['text'] ?>
+          <?= $idx + 1 ?>. <?= $opt['text'] ?>
         </div>
         <div class="col-6 d-flex">
 
-          <!-- 這裡 style 的 width 後面那串看不懂 ( 還沒補上 ) -->
-          <div class="col-8 bg-success"></div>
+          <!-- 這裡 style 裡面的 0.667 是 bootstrap 的 col-8 的值 -->
+          <div class="col-8 bg-success" style="width:<?= 0.667 * $rate * 100 ?>%"></div>
           <div class="col-4">&nbsp;&nbsp;<?= $opt['count'] ?>票(<?= $rate * 100 ?>%)</div>
         </div>
       </li>
@@ -48,7 +47,7 @@
     }
     ?>
   </ul>
-  <button class="btn btn-primary d-block mx-auto my-5" onclick="location.href=index.php">返回</button>
+  <button class="btn btn-primary d-block mx-auto my-5" onclick="location.href='index.php'">返回</button>
   <script src=" ../js/jquery-3.4.1.min.js"></script>
   <script src="../js/bootstrap.js"></script>
 

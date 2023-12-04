@@ -29,7 +29,7 @@
         </tr>
 
         <?php
-        $ques = $Que->all(['subject_id' => 0, 'sh' => 1]);
+        $ques = $Que->all(['subject_id' => 0]);
         foreach ($ques as $idx => $que) {
         ?>
           <tr>

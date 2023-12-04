@@ -1,5 +1,6 @@
 <?php include_once "../db.php";
 
+print_r($_POST);
 $opt = $Que->find($_POST['opt']);
 $opt['count'] += 1;
 
