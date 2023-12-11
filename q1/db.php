@@ -78,6 +78,7 @@ class DB
     return $this->math('avg', $col, $where, $other);
   }
 
+  // 針對所有資料的某個欄位去做計數，因為對全部的欄位做計數太耗效能
   function total($id)
   {
     $sql = "select count(`id`) from `$this->table` ";
@@ -135,71 +136,6 @@ class DB
     return $this->pdo->exec($sql);
   }
 
-  // protected function update($id, $cols)
-  // {
-
-  //   $sql = "update `$this->table` set ";
-
-  //   if (!empty($cols)) {
-  //     foreach ($cols as $col => $value) {
-  //       $tmp[] = "`$col`='$value'";
-  //     }
-  //   } else {
-  //     echo "錯誤:缺少要編輯的欄位陣列";
-  //   }
-
-  //   $sql .= join(",", $tmp);
-  //   $tmp = [];
-  //   if (is_array($id)) {
-  //     foreach ($id as $col => $value) {
-  //       $tmp[] = "`$col`='$value'";
-  //     }
-  //     $sql .= " where " . join(" && ", $tmp);
-  //   } else if (is_numeric($id)) {
-  //     $sql .= " where `id`='$id'";
-  //   } else {
-  //     echo "錯誤:參數的資料型態比須是數字或陣列";
-  //   }
-  //   // echo $sql;
-  //   return $this->pdo->exec($sql);
-  // }
-
-
-  // 確定 $id 的值就是數字的 function 寫法
-  // protected function update($cols)
-  // {
-
-  //   $sql = "update `$this->table` set ";
-
-  //   if (!empty($cols)) {
-  //     foreach ($cols as $col => $value) {
-  //       $tmp[] = "`$col`='$value'";
-  //     }
-  //   } else {
-  //     echo "錯誤:缺少要編輯的欄位陣列";
-  //   }
-
-  //   $sql .= join(",", $tmp) . " where `id`='{$cols['id']}'";
-  //   // echo $sql;
-  //   return $this->pdo->exec($sql);
-  // }
-
-
-
-
-  // protected function insert($values)
-  // {
-
-  //   $sql = "insert into `$this->table` ";
-  //   $cols = "(`" . join("`,`", array_keys($values)) . "`)";
-  //   $vals = "('" . join("','", $values) . "')";
-
-  //   $sql = $sql . $cols . " values " . $vals;
-
-  //   //echo $sql;
-
-  //   return $this->pdo->exec($sql);
-  // }
 
   function del($id)
   {
